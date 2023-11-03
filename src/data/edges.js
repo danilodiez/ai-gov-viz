@@ -4,24 +4,34 @@ export const edges = [
     label: "vested by",
     target: "us_constitution_laws",
     id: "06caf460-fdd3-4c81-9a16-e9c32488f7f2",
+    start_phrase: "By the authority vested in me as President by",
+    end_phrase: "the Constitution and the laws of the United States of America",
   },
   {
     source: "ai",
     label: "has",
     target: "purpose",
     id: "52393598-04d7-4709-ba55-1a37d0f1fd4f",
+    start_phrase: "Section 1.  Purpose.  Artificial intelligence",
+    end_phrase: "(AI) holds extraordinary potential for both promise and peril",
   },
   {
     source: "purpose",
     label: "includes",
     target: "risks",
     id: "2c758a46-32e1-4d58-af57-26d52f971d61",
+    start_phrase: "At the same time, irresponsible use could",
+    end_phrase:
+      "exacerbate societal harms such as fraud, discrimination, bias, and disinformation",
   },
   {
     source: "purpose",
     label: "includes",
     target: "benefits",
     id: "5f93d34c-c29a-469e-8d5d-52b67a5251a4",
+    start_phrase: "Responsible AI use has the potential to help solve urgent",
+    end_phrase:
+      "challenges while making our world more prosperous, productive, innovative, and secure",
   },
   {
     source: "administration",
