@@ -1,8 +1,8 @@
 import { useCallback, useRef, useState } from "react";
 import { GraphCanvas, GraphCanvasRef, useSelection } from "reagraph";
 import "./App.css";
-import { nodes } from "./data/nodes.js";
-import { edges } from "./data/edges.js";
+import { newNodes } from "./data/new-nodes.js";
+import { newEdges } from "./data/new-edges.js";
 import { Article } from "./article.js";
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
   const [highlightedText, setHighlightedText] = useState({});
   const { selections, onNodeClick, onCanvasClick } = useSelection({
     ref: graphRef,
-    nodes: nodes,
-    edges: edges,
+    nodes: newNodes,
+    edges: newEdges,
     focusOnSelect: false,
   });
   const handleEdgeSelection = useCallback((edge) => {
@@ -32,7 +32,6 @@ function App() {
     >
       <div
         style={{
-          border: "2px solid red",
           maxHeight: "100vh",
           overflow: "scroll",
         }}
@@ -46,8 +45,8 @@ function App() {
           selections={selections}
           onNodeClick={onNodeClick}
           onCanvasClick={onCanvasClick}
-          nodes={nodes}
-          edges={edges}
+          nodes={newNodes}
+          edges={newEdges}
           onEdgeClick={handleEdgeSelection}
         />
       </div>
