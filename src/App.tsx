@@ -12,7 +12,7 @@ function App() {
     ref: graphRef,
     nodes: newNodes,
     edges: newEdges,
-    focusOnSelect: false,
+    pathSelectionType: 'in',
   });
   const handleEdgeSelection = useCallback((edge) => {
     if (edge.start_phrase !== "") {
