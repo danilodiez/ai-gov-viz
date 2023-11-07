@@ -1,4 +1,14 @@
-export const newEdges = [
+
+export interface Edge {
+  source: string
+  label: string
+  target: string
+  start_phrase: string
+  end_phrase: string
+  id: string
+}
+
+export const newEdges: Edge[] = [
   {
     source: "Artificial_intelligence",
     label: "holds potential for",
@@ -1205,6 +1215,7 @@ export const newEdges = [
     target: "existing_authorities",
     start_phrase: "The Federal Trade Commission is encouraged to",
     id: "62e7aebf-c55f-4af2-aa7e-6b3335623df3",
+    end_phrase: "",
   },
   {
     source: "other_resources",

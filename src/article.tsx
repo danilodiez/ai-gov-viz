@@ -1,8 +1,15 @@
 import { useCallback, useRef, useEffect } from "react";
 import { ORIGINAL_TEXT } from "./data/article.js";
 
-export const Article = ({ highlightedText }) => {
-  const markerRef = useRef(null);
+interface Props {
+  highlightedText: {
+    start: string;
+    end: string;
+  };
+}
+
+export const Article = ({ highlightedText }: Props) => {
+  const markerRef = useRef<null | HTMLDivElement>(null);
   useEffect(() => {
     if (markerRef.current) {
       markerRef.current.scrollIntoView({
@@ -54,7 +61,10 @@ export const Article = ({ highlightedText }) => {
     <section>
       <div style={{ position: "sticky", top: "0", background: "#354156" }}>
         This text was extracted from:{" "}
-        <a href="https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/" target="_blank">
+        <a
+          href="https://www.whitehouse.gov/briefing-room/presidential-actions/2023/10/30/executive-order-on-the-safe-secure-and-trustworthy-development-and-use-of-artificial-intelligence/"
+          target="_blank"
+        >
           Executive Order on the Safe, Secure, and Trustworthy Development and
           Use of Artificial Intelligence
         </a>

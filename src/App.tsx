@@ -1,20 +1,24 @@
 import { useCallback, useRef, useState } from "react";
 import { GraphCanvas, GraphCanvasRef, useSelection } from "reagraph";
 import "./App.css";
-import { newNodes } from "./data/new-nodes.js";
-import { newEdges } from "./data/new-edges.js";
-import { Article } from "./article.js";
+import { newNodes } from "./data/new-nodes.ts";
+import { newEdges } from "./data/new-edges.ts";
+import { Article } from "./article.tsx";
+import { Edge } from "./data/new-edges.ts";
 
 function App() {
   const graphRef = useRef<GraphCanvasRef | null>(null);
-  const [highlightedText, setHighlightedText] = useState({});
+  const [highlightedText, setHighlightedText] = useState({
+    start: "",
+    end: "",
+  });
   const { selections, onNodeClick, onCanvasClick } = useSelection({
     ref: graphRef,
     nodes: newNodes,
     edges: newEdges,
-    pathSelectionType: 'in',
+    pathSelectionType: "in",
   });
-  const handleEdgeSelection = useCallback((edge) => {
+  const handleEdgeSelection = useCallback((edge: Edge) => {
     if (edge.start_phrase !== "") {
       setHighlightedText({
         start: edge.start_phrase,
@@ -47,7 +51,8 @@ function App() {
           onCanvasClick={onCanvasClick}
           nodes={newNodes}
           edges={newEdges}
-          onEdgeClick={handleEdgeSelection}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          onEdgeClick={(edge: any) => handleEdgeSelection(edge)}
         />
       </div>
     </div>

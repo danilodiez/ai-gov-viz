@@ -1,4 +1,10 @@
-export const newNodes = [
+export interface Node {
+  label: string
+  id: string
+}
+
+
+export const newNodes: Node[] = [
   {
     label: "Artificial intelligence",
     id: "Artificial_intelligence",

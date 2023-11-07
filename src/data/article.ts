@@ -1,4 +1,4 @@
-export const ORIGINAL_TEXT = `
+export const ORIGINAL_TEXT: string = `
     By the authority vested in me as President by the Constitution and the laws of the United States of America, it is hereby ordered as follows:
 
 
